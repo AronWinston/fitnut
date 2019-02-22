@@ -1,0 +1,15 @@
+<%= link_to "New Meal", new_meal_path(@meal) %>
+
+
+<%@meals.each do |meal|%>
+
+<ul>
+
+<li><%=meal.meal_type%></li>
+<li><%=meal.meal_name%></li>
+<li><%=meal.calories_consumed%></li>
+<li><%=meal.created_at%></li>
+</ul>
+<%= link_to "Edit Meal", edit_meal_path(meal) %>
+
+<%end%>

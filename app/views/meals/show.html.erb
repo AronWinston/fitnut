@@ -1,0 +1,22 @@
+<%= link_to "New Meal", new_meal_path(@meal) %>
+
+
+<div>
+<p>Type of Meal: <%=@meal.meal_type%></p>
+</div>
+
+<div>
+<p>Name of Meal: <%=@meal.meal_name%></p>
+</div>
+
+<div>
+<p>Total Calories: <%=@meal.calories_consumed%></p>
+</div>
+
+<div>
+<p>Date:<%=@meal.created_at%>
+</div>
+
+<%= link_to "Edit Meal", edit_meal_path(@meal) %>
+
+

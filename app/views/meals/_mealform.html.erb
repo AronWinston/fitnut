@@ -1,0 +1,23 @@
+<%= form_with model: @meals, url: '/meals/new', local: true do |f|%>
+
+<p>
+<%= hidden_field_tag(:user_id, @user) %>
+</p>
+
+<p>
+<%= f.label :meal_type%><br>
+<%= f.select :meal_type, ["breakfast", "lunch", "dinner", "snack", "sweets", "desert"], autocomplete: "meal time"%>
+</p>
+
+<p>
+<%= f.label :meal_name%><br>
+<%= f.text_field :meal_name, autocomplete: "meal name"%>
+</p>
+
+<p>
+<%= f.label :calories_consumed%><br>
+<%= f.text_field :calories_consumed, autocomplete: "calories"%>
+
+<%=f.submit 'submit' %>
+
+<%end%>

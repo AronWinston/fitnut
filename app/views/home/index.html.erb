@@ -1,0 +1,15 @@
+<h1>Users</h1>
+
+<ul>
+<%@users.each do |user|%>
+<li>Name: <%=user.name%></li>
+<li>Email: <%=user.email%></li>
+<li>Gym: <%=user.gym%></li>
+<li>Gender: <%=user.gender%></li>
+<li>Height: <%=user.height%> ft</li>
+<li>Weight: <%=user.weight%> lbs</li>
+<li>D.O.B: <%=user.dob%></li>
+<%end%>
+</ul>
+
+
