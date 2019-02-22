@@ -29,7 +29,7 @@ class MealsController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    # @user = current_user
     @meal = Meal.find(params[:id])
   end
 
@@ -38,9 +38,9 @@ class MealsController < ApplicationController
     @meal = Meal.find(params[:id])
     @meal.update(
       user_id: @user.id,
-      meal_type: params[:meal_type],
-      meal_name: params[:meal_name],
-      calories_consumed: params[:calories_consumed]
+      meal_type: params[:meal][:meal_type],
+      meal_name: params[:meal][:meal_name],
+      calories_consumed: params[:meal][:calories_consumed]
     )
     redirect_to meal_path(@meal)
   end

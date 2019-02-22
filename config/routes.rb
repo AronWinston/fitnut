@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
   post '/meals/new', to: 'meals#create'
-  patch '/update', to: 'meals#update'
+  # post '/meals/:id/update', to: 'meals#update'
+  post '/workouts/new', to: 'workouts#create'
 
   resources :home
   resources :workouts

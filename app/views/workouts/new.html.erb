@@ -1,2 +1,43 @@
-<h1>Workouts#new</h1>
-<p>Find me in app/views/workouts/new.html.erb</p>
+<h1>New Workout</h1>
+
+ 
+
+<%= form_with model: @workouts, url: '/workouts/new', local: true do |f|%>
+
+<p>
+<%= hidden_field_tag(:user_id, @user) %>
+</p>
+
+<p>
+<%= f.label :exercise%><br>
+<%= f.text_field :exercise, autocomplete: "exercise"%>
+</p>
+
+<p>
+<%= f.label :muscle%><br>
+<%= f.text_field :muscle, autocomplete: "muscle"%>
+</p>
+
+<p>
+<%= f.label :calories_burned%><br>
+<%= f.text_field :calories_burned, autocomplete: "calories"%>
+</p>
+
+<p>
+<%= f.label :sets%><br>
+<%= f.text_field :sets, autocomplete: "sets"%>
+</p>
+
+<p>
+<%= f.label :reps%><br>
+<%= f.text_field :reps, autocomplete: "reps"%>
+</p>
+
+<p>
+<%= f.label :workout_date%><br>
+<%= f.date_field :workout_date, autocomplete: "workout date"%>
+</p>
+
+<%=f.submit 'submit' %>
+
+<%end%>

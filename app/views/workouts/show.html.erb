@@ -1,2 +1,24 @@
-<h1>Workouts#show</h1>
-<p>Find me in app/views/workouts/show.html.erb</p>
+<%= link_to "New Workout", new_workout_path(@workout) %>
+
+
+<div>
+<p>Type of workout: <%=@workout.exercise%></p>
+</div>
+
+<div>
+<p>Muscle Targeted: <%=@workout.muscle%></p>
+</div>
+
+<div>
+<p>Total Calories Burned: <%=@workout.calories_burned%></p>
+</div>
+
+<div>
+<p>Sets / Reps: <%=@workout.sets%> x <%=@workout.reps%></p>
+</div>
+
+<div>
+<p>Date: <%=@workout.workout_date%></p>
+</div>
+
+<%= link_to "Edit workout", edit_workout_path(@workout) %>
