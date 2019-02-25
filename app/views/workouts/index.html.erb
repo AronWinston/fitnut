@@ -9,7 +9,6 @@
 <div style="width:400px; height:400px">
 <%=image_tag(workout.image, style: 'width:100%')%>
 </div>
-
 <li><%=workout.muscle%></li>
 <li><%=workout.calories_burned%></li>
 <li><%=workout.sets%></li>
@@ -19,6 +18,16 @@
 <br />
 <%= link_to "Edit workout", edit_workout_path(workout) %>
 <% else %>
+<h2><%=workout.exercise%></h2>
+<li><%=workout.muscle%></li>
+<li><%=workout.calories_burned%></li>
+<li><%=workout.sets%></li>
+<li><%=workout.reps%></li>
+<li><%=workout.weight_amount%></li>
+<li><%=workout.workout_date%></li>
+<br />
+<%= link_to "Edit workout", edit_workout_path(workout) %>
+
 <%end%>
 </ul>
 

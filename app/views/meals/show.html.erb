@@ -8,10 +8,11 @@
 <div>
 <p>Type of Meal: <%=@meal.meal_type%></p>
 </div>
-
+<%if @meal.image.attached?%>
 <div style="width:400px; height:400px">
-<%=image_tag(@meal.image, style:'width:100%')%>
+<%=image_tag(@meal.image, style:'width:auto')%>
 </div>
+
 
 <div>
 <p>Total Calories: <%=@meal.calories_consumed%></p>
@@ -20,7 +21,10 @@
 <div>
 <p>Date:<%=@meal.created_at%></p>
 </div>
+<%else%>
 
+
+<%end%>
 <%= link_to "Edit Meal", edit_meal_path(@meal) %>
 
 

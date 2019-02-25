@@ -1,7 +1,7 @@
 class MealsController < ApplicationController
   def index
     @user = current_user
-    @meals = Meal.all
+    @meals = @user.meals.all
   end
 
   def show
@@ -39,6 +39,7 @@ class MealsController < ApplicationController
     @meal = Meal.find(params[:id])
     @meal.update(
       user_id: @user.id,
+      # image: params[:active_storage_attachments][:image],
       meal_type: params[:meal][:meal_type],
       meal_name: params[:meal][:meal_name],
       calories_consumed: params[:meal][:calories_consumed]

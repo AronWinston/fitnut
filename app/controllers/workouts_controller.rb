@@ -1,7 +1,7 @@
 class WorkoutsController < ApplicationController
   def index
     @user = current_user
-    @workouts = Workout.all
+    @workouts = @user.workouts.all
   end
 
   def show
