@@ -17,11 +17,13 @@ class WorkoutsController < ApplicationController
     @user = current_user
     @workout = Workout.new(
       user_id: @user.id,
+      image: params[:image],
       exercise: params[:exercise],
       muscle: params[:muscle],
       calories_burned: params[:calories_burned],
       sets: params[:sets],
       reps: params[:reps],
+      weight_amount: params[:weight_amount],
       workout_date: params[:workout_date]
     )
     if @workout.save
@@ -41,11 +43,13 @@ class WorkoutsController < ApplicationController
     @workout = Workout.find(params[:id])
     @workout.update(
       user_id: @user.id,
+      # image: params[:active_storage_attachments][:image],
       exercise: params[:workout][:exercise],
       muscle: params[:workout][:muscle],
       calories_burned: params[:workout][:calories_burned],
       sets: params[:workout][:sets],
       reps: params[:workout][:reps],
+      weight_amount: params[:workout][:weight_amount],
       workout_date: params[:workout][:workout_date]
     )
     redirect_to workout_path(@workout)

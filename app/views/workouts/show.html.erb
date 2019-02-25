@@ -1,8 +1,12 @@
 <%= link_to "New Workout", new_workout_path(@workout) %>
 
+<div style="width:400px; height:400px">
+<%=image_tag(@workout.image, style:'width:100%')%>
+</div>
+
 
 <div>
-<p>Type of workout: <%=@workout.exercise%></p>
+<h2>Type of workout: <%=@workout.exercise%></h2>
 </div>
 
 <div>
@@ -15,6 +19,10 @@
 
 <div>
 <p>Sets / Reps: <%=@workout.sets%> x <%=@workout.reps%></p>
+</div>
+
+<div>
+<p>Weight Amount: <%=@workout.weight_amount%></p>
 </div>
 
 <div>

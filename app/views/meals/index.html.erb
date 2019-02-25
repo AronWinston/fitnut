@@ -4,11 +4,20 @@
 <%@meals.each do |meal|%>
 
 <ul>
-
+<% if meal.image.attached? %>
+<h2><%=meal.meal_name%></h2>
 <li><%=meal.meal_type%></li>
-<li><%=meal.meal_name%></li>
+<div style="width:400px; height:auto">
+<%=image_tag(meal.image, style: 'width:100%')%>
+</div>
+
 <li><%=meal.calories_consumed%></li>
 <li><%=meal.created_at%></li>
+<br />
+
+<%else%>
+
+<%end%>
 </ul>
 
 

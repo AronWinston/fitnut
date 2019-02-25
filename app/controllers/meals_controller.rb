@@ -17,6 +17,7 @@ class MealsController < ApplicationController
     @user = current_user
     @meal = Meal.new(
       user_id: @user.id,
+      image: params[:image],
       meal_type: params[:meal_type],
       meal_name: params[:meal_name],
       calories_consumed: params[:calories_consumed]

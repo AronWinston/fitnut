@@ -4,14 +4,22 @@
 <%@workouts.each do |workout|%>
 
 <ul>
+<% if workout.image.attached? %>
+<h2><%=workout.exercise%></h2>
+<div style="width:400px; height:400px">
+<%=image_tag(workout.image, style: 'width:100%')%>
+</div>
 
-<li><%=workout.exercise%></li>
 <li><%=workout.muscle%></li>
 <li><%=workout.calories_burned%></li>
 <li><%=workout.sets%></li>
 <li><%=workout.reps%></li>
+<li><%=workout.weight_amount%></li>
 <li><%=workout.workout_date%></li>
+<br />
+<%= link_to "Edit workout", edit_workout_path(workout) %>
+<% else %>
+<%end%>
 </ul>
-
 
 <%end%>

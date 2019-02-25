@@ -2,11 +2,15 @@
 
 
 <div>
-<p>Type of Meal: <%=@meal.meal_type%></p>
+<h2>Name of Meal: <%=@meal.meal_name%></h2>
 </div>
 
 <div>
-<p>Name of Meal: <%=@meal.meal_name%></p>
+<p>Type of Meal: <%=@meal.meal_type%></p>
+</div>
+
+<div style="width:400px; height:400px">
+<%=image_tag(@meal.image, style:'width:100%')%>
 </div>
 
 <div>
