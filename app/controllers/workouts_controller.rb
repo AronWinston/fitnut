@@ -1,7 +1,7 @@
 class WorkoutsController < ApplicationController
   def index
     @user = current_user
-    @workouts = @user.workouts.all
+    @workouts = @user.workouts.order('created_at DESC')
   end
 
   def show
