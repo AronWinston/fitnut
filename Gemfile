@@ -62,3 +62,9 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
+
+gem 'rails-uikit',git: 'git://github.com/nicbet/rails-uikit.git'
+
+
+gem 'bootstrap-sass'
+gem 'devise-bootstrapped', '~> 0.1.1'

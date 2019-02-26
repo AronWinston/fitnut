@@ -1,20 +1,55 @@
-<h1>My Profile</h1>
 
-<ul>
 
-<li>Name: <%=@user.name%></li>
+<div class="container">
+
+<div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
+<div class="uk-card">
+<h1 class="profile"><%=@user.name%></h1>
+
 <%if @user.avatar.attached?%>
-<div style="width:400px; height:auto">
-<%=image_tag(@user.avatar, style:'width: 100%; border-radius:100%')%>
+
+<div class="profilepic uk-position-top">
+  <%= image_tag(@user.avatar, style:"border-radius:100%" )%>
 </div>
 
-<li>Email: <%=@user.email%></li>
-<li>Gym: <%=@user.gym%></li>
-<li>Gender: <%=@user.gender%></li>
-<li>Height: <%=@user.height%> ft</li>
-<li>Weight: <%=@user.weight%> lbs</li>
-<li>D.O.B: <%=@user.dob%></li>
-<br />
+    <div>
+        <div class="uk-background-muted uk-padding">
+        Email: <%=@user.email%>
+        </div>
+    </div>
+    <div>
+        <div class="uk-background-primary uk-padding uk-light">
+        Gym: <%=@user.gym%>
+        </div>
+    </div>
+    <div>
+        <div class="uk-background-muted uk-padding">
+        Gender: <%=@user.gender%>
+        </div>
+    </div>
+      <div>
+        <div class="uk-background-primary uk-padding uk-light">
+        Height: <%=@user.height%> ft
+        </div>
+    </div>
+      <div>
+        <div class="uk-background-muted uk-padding">
+        Weight: <%=@user.weight%> lbs
+        </div>
+    </div>
+
+      <div>
+        <div class="uk-background-primary uk-padding uk-light">
+        D.O.B: <%=@user.dob%>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+</div>
+
+
 <%else%>
 
 <li>Email: <%=@user.email%></li>
@@ -26,6 +61,7 @@
 <br />
 <%end%>
 
-</ul>
+
+</div>
 
 

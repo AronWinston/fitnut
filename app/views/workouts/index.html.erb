@@ -1,4 +1,4 @@
-<%= link_to "New Workout", new_workout_path(@workout) %>
+<%= link_to "New Workout", new_workout_path(@workout), style:"margin:30px" %>
 
 
 <%@workouts.each do |workout|%>
@@ -10,20 +10,20 @@
 <%=image_tag(workout.image, style: 'width:100%')%>
 </div>
 <li><%=workout.muscle%></li>
-<li><%=workout.calories_burned%></li>
-<li><%=workout.sets%></li>
-<li><%=workout.reps%></li>
-<li><%=workout.weight_amount%></li>
+<li><%=workout.calories_burned%> Calories</li>
+<li><%=workout.sets%> Sets</li>
+<li><%=workout.reps%> Reps</li>
+<li><%=workout.weight_amount%> Lbs</li>
 <li><%=workout.workout_date%></li>
 <br />
 <%= link_to "Edit workout", edit_workout_path(workout) %>
 <% else %>
 <h2><%=workout.exercise%></h2>
 <li><%=workout.muscle%></li>
-<li><%=workout.calories_burned%></li>
-<li><%=workout.sets%></li>
-<li><%=workout.reps%></li>
-<li><%=workout.weight_amount%></li>
+<li><%=workout.calories_burned%> Calories</li>
+<li><%=workout.sets%> Sets</li>
+<li><%=workout.reps%> Reps</li>
+<li><%=workout.weight_amount%> Lbs</li>
 <li><%=workout.workout_date%></li>
 <br />
 <%= link_to "Edit workout", edit_workout_path(workout) %>
