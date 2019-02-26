@@ -1,5 +1,7 @@
 <%= link_to "New Workout", new_workout_path(@workout) %>
 
+<div class="uk-card uk-card-hover uk-card-default">
+<center>
 <%if @workout.image.attached?%>
 <div style="width:400px; height:400px">
 <%=image_tag(@workout.image, style:'width:100%')%>
@@ -35,3 +37,5 @@
 <%end%>
 
 <%= link_to "Edit workout", edit_workout_path(@workout) %>
+</center>
+</div>

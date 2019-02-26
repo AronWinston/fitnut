@@ -1,8 +1,9 @@
+<div class="uk-card uk-card-hover uk-card-default">
+<center>
+
 <h1>New Workout</h1>
 
- 
-
-<%= form_with model: @workouts, url: '/workouts/new', local: true do |f|%>
+ <%= form_with model: @workouts, url: '/workouts/new', local: true do |f|%>
 
 <p>
 <%= hidden_field_tag(:user_id, @user) %>
@@ -51,3 +52,5 @@
 <%=f.submit 'submit' %>
 
 <%end%>
+</center>
+</div>
