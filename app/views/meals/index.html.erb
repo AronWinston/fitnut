@@ -1,13 +1,15 @@
+
 <%= link_to "New Meal", new_meal_path(@meal), style:"margin:30px" %>
 
 
 <%@meals.each do |meal|%>
-
+<div class="uk-card uk-card-hover uk-card-default">
+<center>
 <ul>
 <% if meal.image.attached? %>
 <h2><%=meal.meal_name%></h2>
 <li><%=meal.meal_type%></li>
-<div style="width:400px; height:auto">
+<div style="width:16rem; height:16rem">
 <%=image_tag(meal.image, style: 'width:100%')%>
 </div>
 
@@ -23,8 +25,10 @@
 <li><%=meal.created_at%></li>
 <br />
 <%= link_to "Edit Meal", edit_meal_path(meal) %>
-<%end%>
-</ul>
 
+<%end%>
+</center>
+</div>
+</ul>
 
 <%end%>
