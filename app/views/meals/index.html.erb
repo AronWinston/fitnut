@@ -3,32 +3,39 @@
 
 
 <%@meals.each do |meal|%>
-<div class="uk-card uk-card-hover uk-card-default">
-<center>
-<ul>
+<div class="uk-card uk-card-hover uk-card-default uk-animation-fade">
+
 <% if meal.image.attached? %>
+<div class="uk-postion-left">
+<%=image_tag(meal.image, style:"height:16rem; width:16rem; margin:20px; box-shadow: .1rem .1rem .1rem .1rem #1e87f0")%>
+</div>
+<ul>
+
+<div class="uk-position-center">
 <h2><%=meal.meal_name%></h2>
 <li><%=meal.meal_type%></li>
-<div style="width:300px; height:300px">
-<%=image_tag(meal.image, style: 'width:auto')%>
-</div>
-
 <li><%=meal.calories_consumed%> calories</li>
 <li><%=meal.created_at%></li>
+</div>
 <br />
-<%= link_to "Edit Meal", edit_meal_path(meal) %>
+<%= link_to "Edit", edit_meal_path(meal) %>
 
 <%else%>
+<center>
 <h2><%=meal.meal_name%></h2>
 <li><%=meal.meal_type%></li>
 <li><%=meal.calories_consumed%> calories</li>
 <li><%=meal.created_at%></li>
+
 <br />
-<%= link_to "Edit Meal", edit_meal_path(meal) %>
+<%= link_to "Edit", edit_meal_path(meal) %>
+</center>
 
 <%end%>
-</center>
+
 </div>
 </ul>
 
 <%end%>
+
+

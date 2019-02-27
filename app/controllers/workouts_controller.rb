@@ -27,7 +27,7 @@ class WorkoutsController < ApplicationController
       workout_date: params[:workout_date]
     )
     if @workout.save
-      redirect_to workout_path(@workout)
+      redirect_to workouts_path(@workout)
     else
       render 'new'
     end
@@ -43,7 +43,7 @@ class WorkoutsController < ApplicationController
     @workout = Workout.find(params[:id])
     @workout.update(
       user_id: @user.id,
-      # image: params[:active_storage_attachments][:image],
+      image: params[:workout][:image],
       exercise: params[:workout][:exercise],
       muscle: params[:workout][:muscle],
       calories_burned: params[:workout][:calories_burned],
@@ -52,7 +52,7 @@ class WorkoutsController < ApplicationController
       weight_amount: params[:workout][:weight_amount],
       workout_date: params[:workout][:workout_date]
     )
-    redirect_to workout_path(@workout)
+    redirect_to workouts_path(@workout)
   end
 
   def destroy

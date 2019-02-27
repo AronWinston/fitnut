@@ -23,7 +23,7 @@ class MealsController < ApplicationController
       calories_consumed: params[:calories_consumed]
     )
     if @meal.save
-      redirect_to meal_path(@meal)
+      redirect_to meals_path(@meal)
     else
       render 'new'
     end
@@ -39,12 +39,12 @@ class MealsController < ApplicationController
     @meal = Meal.find(params[:id])
     @meal.update(
       user_id: @user.id,
-      # image: params[:active_storage_attachments][:image],
+      image: params[:meal][:image],
       meal_type: params[:meal][:meal_type],
       meal_name: params[:meal][:meal_name],
       calories_consumed: params[:meal][:calories_consumed]
     )
-    redirect_to meal_path(@meal)
+    redirect_to meals_path(@meal)
   end
 
   def destroy

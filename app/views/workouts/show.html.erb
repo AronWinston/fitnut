@@ -1,6 +1,6 @@
 <%= link_to "New Workout", new_workout_path(@workout) %>
 
-<div class="uk-card uk-card-hover uk-card-default">
+<div class="uk-card uk-card-hover uk-card-default uk-animation-fade">
 <center>
 <%if @workout.image.attached?%>
 <div style="width:400px; height:400px">
@@ -34,6 +34,31 @@
 <p>Date: <%=@workout.workout_date%></p>
 </div>
 <%else%>
+
+<div>
+<h2>Type of workout: <%=@workout.exercise%></h2>
+</div>
+
+<div>
+<p>Muscle Targeted: <%=@workout.muscle%></p>
+</div>
+
+<div>
+<p>Total Calories Burned: <%=@workout.calories_burned%></p>
+</div>
+
+<div>
+<p>Sets / Reps: <%=@workout.sets%> x <%=@workout.reps%></p>
+</div>
+
+<div>
+<p>Weight Amount: <%=@workout.weight_amount%></p>
+</div>
+
+<div>
+<p>Date: <%=@workout.workout_date%></p>
+</div>
+
 <%end%>
 
 <%= link_to "Edit workout", edit_workout_path(@workout) %>

@@ -2,13 +2,13 @@
 
 
 <%@workouts.each do |workout|%>
-<div class="uk-card uk-card-hover uk-card-default">
+<div class="uk-card uk-card-hover uk-card-default uk-animation-fade">
 <center>
 <ul>
 <% if workout.image.attached? %>
 <h2><%=workout.exercise%></h2>
-<div style="width:16rem; height:16rem">
-<%=image_tag(workout.image, style: 'width:100%')%>
+<div style="uk-position-center">
+<%=image_tag(workout.image, style: "height:16rem; width:16rem; margin:20px; box-shadow: .1rem .1rem .1rem .1rem #1e87f0")%>
 </div>
 <li><%=workout.muscle%></li>
 <li><%=workout.calories_burned%> Calories</li>
@@ -19,6 +19,7 @@
 <br />
 <%= link_to "Edit workout", edit_workout_path(workout) %>
 <% else %>
+<div style="uk-position-center">
 <h2><%=workout.exercise%></h2>
 <li><%=workout.muscle%></li>
 <li><%=workout.calories_burned%> Calories</li>
@@ -26,6 +27,7 @@
 <li><%=workout.reps%> Reps</li>
 <li><%=workout.weight_amount%> Lbs</li>
 <li><%=workout.workout_date%></li>
+</div>
 <br />
 <%= link_to "Edit workout", edit_workout_path(workout) %>
 

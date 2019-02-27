@@ -4,7 +4,7 @@
 
 <%# <render partial: 'mealform' %> 
 
-<%= form_with model: @meals, url: '/meals/new', local: true do |f|%>
+<%= form_with model: @meals, local: true do |f|%>
 
 <p>
 <%= hidden_field_tag(:user_id, @user) %>

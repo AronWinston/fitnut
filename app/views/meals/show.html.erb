@@ -1,6 +1,11 @@
 <%= link_to "New Meal", new_meal_path(@meal) %>
-<div class="uk-card uk-card-hover uk-card-default">
+<div class="uk-card uk-card-hover uk-card-default uk-animation-fade">
 <center>
+
+<%if @meal.image.attached?%>
+<div style="width:400px; height:400px">
+<%=image_tag(@meal.image, style:'width:auto')%>
+</div>
 
 <div>
 <h2>Name of Meal: <%=@meal.meal_name%></h2>
@@ -9,10 +14,7 @@
 <div>
 <p>Type of Meal: <%=@meal.meal_type%></p>
 </div>
-<%if @meal.image.attached?%>
-<div style="width:400px; height:400px">
-<%=image_tag(@meal.image, style:'width:auto')%>
-</div>
+
 <div>
 <p>Total Calories: <%=@meal.calories_consumed%></p>
 </div>
@@ -22,6 +24,21 @@
 </div>
 <%else%>
 
+<div>
+<h2>Name of Meal: <%=@meal.meal_name%></h2>
+</div>
+
+<div>
+<p>Type of Meal: <%=@meal.meal_type%></p>
+</div>
+
+<div>
+<p>Total Calories: <%=@meal.calories_consumed%></p>
+</div>
+
+<div>
+<p>Date:<%=@meal.created_at%></p>
+</div>
 
 <%end%>
 <%= link_to "Edit Meal", edit_meal_path(@meal) %>

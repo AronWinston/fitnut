@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'public_meals/index'
   get 'public_workouts/index'
+  
   post '/meals/new', to: 'meals#create'
   # post '/meals/:id/update', to: 'meals#update'
   post '/workouts/new', to: 'workouts#create'
