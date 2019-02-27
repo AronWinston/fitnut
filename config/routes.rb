@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
   post '/meals/new', to: 'meals#create'
   # post '/meals/:id/update', to: 'meals#update'
+  delete '/meals/:id/destroy', to: 'meals#destroy'
   post '/workouts/new', to: 'workouts#create'
 
   resources :home

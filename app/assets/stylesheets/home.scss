@@ -11,6 +11,7 @@ li{
     position: absolute;
     margin: 20px;
     padding: 10px;
+    display: inline-block;
     
     
 }
@@ -20,13 +21,15 @@ li{
     justify-content: center;
     align-items: center;
     font-size: 3rem;
-    background-image: url("http://www.leisureopportunities.co.uk/images/18176_572776.jpg");
+    background-image: url("http://2.bp.blogspot.com/-IZP0iaeqSMk/URlFnT-5uVI/AAAAAAAAAUk/z5gfIbQ_iKU/s1600/header.jpg");
     background-repeat: no-repeat;
     background-size: 100%;
-    background-position: center;
+    background-position: right;
     height:5em;
-    width: 100%; 
+    width: 90%; 
     color: white;
+    margin-left: 8rem;
+    
 }
 
 

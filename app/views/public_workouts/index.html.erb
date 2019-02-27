@@ -1,30 +1,37 @@
 
 
 <%@workouts.each do |workout|%>
-<div class="uk-card uk-card-hover uk-card-default uk-animation-fade">
+    <div class="uk-card uk-card-hover uk-card-default uk-animation-fade">
 <center>
-<ul>
-<% if workout.image.attached? %>
-<h2><%=workout.exercise%></h2>
-<div style="width:16rem; height:16rem">
-<%=image_tag(workout.image, style: 'width:100%')%>
+    <ul>
+    <% if workout.image.attached? %>
+    <h2><%=workout.exercise%></h2>
+<div class="uk-position-left" style="height:10rem; width:10rem; margin:20px">
+
+<%=image_tag(workout.user.avatar, style:"border-radius:75%; height:100%; align-content: center")%>
+<br />
+<br />
+<%=workout.user.name%>
 </div>
-<li><%=workout.muscle%></li>
-<li><%=workout.calories_burned%> Calories</li>
-<li><%=workout.sets%> Sets</li>
-<li><%=workout.reps%> Reps</li>
-<li><%=workout.weight_amount%> Lbs</li>
-<li><%=workout.workout_date%></li>
+    <div style="width:16rem; height:16rem">
+    <%=image_tag(workout.image,  style:"height:16rem; width:16rem; margin:20px; box-shadow: .1rem .1rem .1rem .1rem #1e87f0")%>
+    </div>
+<br />
+<br />
+        <li><%=workout.muscle%></li>
+        <li><%=workout.calories_burned%> Calories</li>
+        <li><%=workout.sets%> Sets x <%=workout.reps%> Reps</li>
+        <li><%=workout.weight_amount%> Lbs</li>
+        <li><%=workout.workout_date.strftime('%B %-d, %Y')%></li>
 <br />
 
 <% else %>
-<h2><%=workout.exercise%></h2>
-<li><%=workout.muscle%></li>
-<li><%=workout.calories_burned%> Calories</li>
-<li><%=workout.sets%> Sets</li>
-<li><%=workout.reps%> Reps</li>
-<li><%=workout.weight_amount%> Lbs</li>
-<li><%=workout.workout_date%></li>
+        <h2><%=workout.exercise%></h2>
+        <li><%=workout.muscle%></li>
+        <li><%=workout.calories_burned%> Calories</li>
+        <li><%=workout.sets%> Sets x <%=workout.reps%> Reps</li>
+        <li><%=workout.weight_amount%> Lbs</li>
+        <li><%=workout.workout_date.strftime('%B %-d, %Y')%></li>
 <br />
 
 

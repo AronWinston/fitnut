@@ -4,17 +4,20 @@
 
 <div class="uk-grid-collapse uk-child-width-expand@s uk-text-center" uk-grid>
 <div class="uk-card">
-<h1 class="profile"><%=@user.name%></h1>
+<h1 class="profile"></h1>
 
 <%if @user.avatar.attached?%>
 
 <div class="profilepic uk-position-top uk-animation-slide-left-medium">
-  <%= image_tag(@user.avatar, style:"border-radius:75%" )%>
+  <%= image_tag(@user.avatar, style:"border-radius:75%; height:100%; align-content: center" )%>
+  <br>
+  <br />
+  <%=@user.name%>
 </div>
 
     <div>
         <div class="uk-background-muted uk-padding">
-        Email: <%=@user.email%>
+         <%=@user.email%>
         </div>
     </div>
     <div>

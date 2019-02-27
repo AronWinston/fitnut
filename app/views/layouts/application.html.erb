@@ -9,41 +9,38 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-
-
-
-  <nav class="uk-navbar uk-navbar-container uk-margin">
+<body>
+<nav class="uk-navbar uk-navbar-container uk-margin">
     <div class="uk-navbar-left">
         <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
     
     <% if user_signed_in? %>
  
     <ul class="uk-nav uk-navbar-dropdown-nav" style="margin-right:10px; padding:5px">
-    <div class="button"> 
-    <%= link_to "Home", home_index_path(@user), style:"margin:10px" %>
-    </div>
-    <div class="button">
-     <%= link_to "My Meals", meals_path(@meal), style:"margin:10px" %> 
-    </div>
-     <div class="button">
-    <%= link_to "My Workouts", workouts_path(@workout), style:"margin:10px" %> 
-    </div>
-    <div class="button">
-    <%= link_to "Public Lifts", public_workouts_index_path(@workouts), style:"margin:10px"%> 
-    </div>
-    <div class="button">
-    <%= link_to "Publics Eats", public_meals_index_path(@meals), style:"margin:10px"%> 
-    </div>
+      <div class="button"> 
+        <%= link_to "Home", home_index_path(@user), style:"margin:10px" %>
+      </div>
+      <div class="button">
+        <%= link_to "My Meals", meals_path(@meal), style:"margin:10px" %> 
+      </div>
+      <div class="button">
+        <%= link_to "My Workouts", workouts_path(@workout), style:"margin:10px" %> 
+      </div>
+      <div class="button">
+        <%= link_to "Public Lifts", public_workouts_index_path(@workouts), style:"margin:10px"%> 
+      </div>
+      <div class="button">
+        <%= link_to "Publics Eats", public_meals_index_path(@meals), style:"margin:10px"%> 
+      </div>
     </div>
 
     <div class="uk-navbar-right" style="margin-right:30px; padding-right:5px">
-    <div class="button">
-    <%= link_to 'Edit Profile', edit_user_registration_path, style:"margin:10px" %>
-    </div>
-    <div class="button">  
-    <%= link_to "Logout", destroy_user_session_path, style:"margin:10px", method: :delete%>
-    </div>
+      <div class="button">
+        <%= link_to 'Edit Profile', edit_user_registration_path, style:"margin:10px" %>
+      </div>
+      <div class="button">  
+        <%= link_to "Logout", destroy_user_session_path, style:"margin:10px", method: :delete%>
+      </div>
     </div>
     </ul>
     

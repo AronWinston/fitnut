@@ -48,5 +48,8 @@ class MealsController < ApplicationController
   end
 
   def destroy
+    @meal = Meal.find(params[:id])
+    @meal.destroy
+        redirect_to request.referrer
   end
 end

@@ -4,13 +4,23 @@
 <ul>
 <% if meal.image.attached? %>
 <h2><%=meal.meal_name%></h2>
-<li><%=meal.meal_type%></li>
-<div style="width:300px; height:300px">
-<%=image_tag(meal.image, style: 'width:auto')%>
-</div>
+<div class="uk-position-left" style="height:10rem; width:10rem; margin:20px">
 
+<%=image_tag(meal.user.avatar, style:"border-radius:75%; height:100%; align-content: center")%>
+<br />
+<br />
+<%=meal.user.name%>
+</div>
+<div style="width:300px; height:300px">
+
+<%=image_tag(meal.image, style: 'width:auto', style:"height:16rem; width:16rem; margin:20px; box-shadow: .1rem .1rem .1rem .1rem #1e87f0")%>
+
+<br />
+
+</div>
+<li><%=meal.meal_type%></li>
 <li><%=meal.calories_consumed%> calories</li>
-<li><%=meal.created_at%></li>
+<li><%=meal.created_at.strftime('%B %-d, %Y')%></li>
 <br />
 
 
@@ -18,7 +28,7 @@
 <h2><%=meal.meal_name%></h2>
 <li><%=meal.meal_type%></li>
 <li><%=meal.calories_consumed%> calories</li>
-<li><%=meal.created_at%></li>
+<li><%=meal.created_at.strftime('%B %-d, %Y')%></li>
 <br />
 
 

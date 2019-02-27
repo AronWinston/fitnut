@@ -7,28 +7,37 @@
 
 <% if meal.image.attached? %>
 <div class="uk-postion-left">
-<%=image_tag(meal.image, style:"height:16rem; width:16rem; margin:20px; box-shadow: .1rem .1rem .1rem .1rem #1e87f0")%>
+    <%=image_tag(meal.image, style:"height:16rem; width:16rem; margin:20px; box-shadow: .1rem .1rem .1rem .1rem #1e87f0")%>
 </div>
+
 <ul>
-
-<div class="uk-position-center">
-<h2><%=meal.meal_name%></h2>
-<li><%=meal.meal_type%></li>
-<li><%=meal.calories_consumed%> calories</li>
-<li><%=meal.created_at%></li>
-</div>
+    <div class="uk-position-center">
+        <h2><%=meal.meal_name%></h2>
+        <li><%=meal.meal_type%></li>
+        <li><%=meal.calories_consumed%> calories</li>
+        <li><%=meal.created_at.strftime('%B %-d, %Y')%></li>
+    </div>
 <br />
-<%= link_to "Edit", edit_meal_path(meal) %>
-
+    <div class="button">
+    <%= link_to "Edit", edit_meal_path(meal), style:"margin:10px" %>
+    </div>
+    <div class="button">
+    <%= link_to "Delete", meal_path(meal), method: :delete, style:"margin:10px" %>
+    </div>
 <%else%>
 <center>
-<h2><%=meal.meal_name%></h2>
-<li><%=meal.meal_type%></li>
-<li><%=meal.calories_consumed%> calories</li>
-<li><%=meal.created_at%></li>
+    <h2><%=meal.meal_name%></h2>
+    <li><%=meal.meal_type%></li>
+    <li><%=meal.calories_consumed%> calories</li>
+    <li><%=meal.created_at.strftime('%B %-d, %Y')%></li>
 
 <br />
-<%= link_to "Edit", edit_meal_path(meal) %>
+    <div class="button">
+    <%= link_to "Edit", edit_meal_path(meal), style:"margin:10px" %>
+    </div>
+    <div class="button">
+    <%= link_to "Delete", meal_path(meal), method: :delete, style:"margin:10px" %>
+    </div>
 </center>
 
 <%end%>
