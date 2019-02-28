@@ -67,3 +67,5 @@ gem 'rails-uikit',git: 'git://github.com/nicbet/rails-uikit.git'
 
 
 gem "sentry-raven"
+
+gem "aws-sdk-s3", require: false
