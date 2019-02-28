@@ -4,8 +4,9 @@
     <div class="uk-card uk-card-hover uk-card-default uk-animation-fade">
 <center>
     <ul>
-    <% if workout.image.attached? %>
+    <% if workout.exercise? %>
     <h2><%=workout.exercise%></h2>
+    <%end%>
 <div class="uk-position-left" style="height:10rem; width:10rem; margin:20px">
 
 <%=image_tag(workout.user.avatar, style:"border-radius:75%; height:100%; align-content: center")%>
@@ -13,29 +14,31 @@
 <br />
 <%=workout.user.name%>
 </div>
+    <% if workout.image.attached? %>
     <div style="width:16rem; height:16rem">
     <%=image_tag(workout.image,  style:"height:16rem; width:16rem; margin:20px; box-shadow: .1rem .1rem .1rem .1rem #1e87f0")%>
     </div>
+    <%end%>
 <br />
 <br />
+        <% if workout.muscle?%>
         <li><%=workout.muscle%></li>
+        <%end%>
+        <% if workout.calories_burned?%>
         <li><%=workout.calories_burned%> Calories</li>
+        <%end%>
+        <% if workout.sets? && workout.reps?%>
         <li><%=workout.sets%> Sets x <%=workout.reps%> Reps</li>
+        <%end%>
+        <% if workout.weight_amount?%>
         <li><%=workout.weight_amount%> Lbs</li>
+        <%end%>
+        <% if workout.workout_date?%>
         <li><%=workout.workout_date.strftime('%B %-d, %Y')%></li>
+        <%end%>
 <br />
 
-<% else %>
-        <h2><%=workout.exercise%></h2>
-        <li><%=workout.muscle%></li>
-        <li><%=workout.calories_burned%> Calories</li>
-        <li><%=workout.sets%> Sets x <%=workout.reps%> Reps</li>
-        <li><%=workout.weight_amount%> Lbs</li>
-        <li><%=workout.workout_date.strftime('%B %-d, %Y')%></li>
-<br />
 
-
-<%end%>
 </center>
 </div>
 </ul>

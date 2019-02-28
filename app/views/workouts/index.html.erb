@@ -5,44 +5,44 @@
 <div class="uk-card uk-card-hover uk-card-default uk-animation-fade">
 <center>
     <ul>
-    <% if workout.image.attached? %>
+    <% if workout.exercise? %>
         <h2><%=workout.exercise%></h2>
+        <%end%>
     <div style="uk-position-center">
+    <% if workout.image.attached? %>
     <%=image_tag(workout.image, style: "height:16rem; width:16rem; margin:20px; box-shadow: .1rem .1rem .1rem .1rem #1e87f0")%>
     </div>
+    <%end%>
+    <% if workout.muscle?%>
         <li><%=workout.muscle%></li>
+        <%end%>
+    <% if workout.calories_burned?%> 
         <li><%=workout.calories_burned%> Calories</li>
+        <%end%>
+        <% if workout.sets?%>
         <li><%=workout.sets%> Sets</li>
+            <%end%>
+        <% if workout.reps?%>
         <li><%=workout.reps%> Reps</li>
+        <%end%>
+        <% if workout.weight_amount?%>
         <li><%=workout.weight_amount%> Lbs</li>
+                <%end%>
+        <% if workout.workout_date?%>
         <li><%=workout.workout_date.strftime('%B %-d, %Y')%></li>
+                <%end%>
+                    
+             
 <br />
+
         <div class="button">
         <%= link_to "Edit", edit_workout_path(workout), style:"margin:10px" %>
         </div>
         <div class="button">
         <%= link_to "Delete", workout_path(workout), method: :delete, style:"margin:10px" %>
         </div>
-<% else %>
-    <div style="uk-position-center">
-        <h2><%=workout.exercise%></h2>
-        <li><%=workout.muscle%></li>
-        <li><%=workout.calories_burned%> Calories</li>
-        <li><%=workout.sets%> Sets</li>
-        <li><%=workout.reps%> Reps</li>
-        <li><%=workout.weight_amount%> Lbs</li>
-        <li><%=workout.workout_date.strftime('%B %-d, %Y')%></li>
+        </center>
     </div>
-<br />
-    <div class="button">
-    <%= link_to "Edit", edit_workout_path(workout), style:"margin:10px" %>
-    </div>
-    <div class="button">
-    <%= link_to "Delete", workout_path(workout), method: :delete, style:"margin:10px"%>
-    </div>
-<%end%>
-</center>
-</div>
 </ul>
-
 <%end%>
+
